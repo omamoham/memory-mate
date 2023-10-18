@@ -20,4 +20,18 @@ public class SharedPreferencesManager {
         return sharedPreferences.getString(key, defaultValue);
     }
 
+    public static void setBoolean(Context context, String key, boolean value) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(key, value);
+        editor.apply();
+    }
+
+    public static boolean getBoolean(Context context, String key, boolean defaultValue) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getBoolean(key, defaultValue);
+    }
+
+
+
 }
