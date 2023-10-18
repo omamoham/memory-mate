@@ -3,7 +3,7 @@ package com.example.memory_mate;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-
+// salamajdfasiljf
 public class MainActivity extends AppCompatActivity {
 
     @Override
