@@ -8,6 +8,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,15 +26,27 @@ public class MainActivity extends AppCompatActivity {
         // Check if the username is already saved
         String username = SharedPreferencesManager.getString(this, "username", null);
 
+        String button11 = SharedPreferencesManager.getString(this, "button1", null);
+
 // If not saved, show a toast to ask for the username
         if (username == null) {
             // Display a toast to ask for the username
             Toast.makeText(this, "Please enter your username", Toast.LENGTH_SHORT).show();
         }
 
+        // If not saved, show a toast to ask for the button1
+        if (button11 == null) {
+            // Display a toast to ask for the username
+            Toast.makeText(this, "Please enter your name for first location", Toast.LENGTH_SHORT).show();
+        }
+
 // Display the username (or "Username" if not set) in the TextView
         TextView usernameTextView = findViewById(R.id.usernameTextView);
         usernameTextView.setText(username != null ? username : "Username");
+
+        // Display the button11 (or "button11" if not set) in the TextView
+        Button button1button = findViewById(R.id.button1);
+        button1button.setText(button11 != null ? button11 : "Rename");
 
 // Display the current date in the Date TextView
         TextView dateTextView = findViewById(R.id.dateTextView);
