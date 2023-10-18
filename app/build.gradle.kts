@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.memory_mate"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.memory_mate"
