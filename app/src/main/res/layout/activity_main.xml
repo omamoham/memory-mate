@@ -36,6 +36,19 @@
         app:layout_constraintTop_toBottomOf="@+id/usernameTextView" />
 
     <EditText
+        android:id="@+id/button2EditText"
+        android:layout_width="325dp"
+        android:layout_height="64dp"
+        android:layout_below="@id/dateTextView"
+        android:hint="Enter your 2nd location name"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.362" />
+
+    <EditText
         android:id="@+id/usernameEditText"
         android:layout_width="325dp"
         android:layout_height="64dp"
@@ -46,7 +59,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.178" />
+        app:layout_constraintVertical_bias="0.266" />
+
+    <EditText
+        android:id="@+id/button1EditText"
+        android:layout_width="325dp"
+        android:layout_height="64dp"
+        android:layout_below="@id/dateTextView"
+        android:hint="Enter your location name"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.17" />
 
     <Button
         android:id="@+id/button1"
@@ -56,10 +82,10 @@
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="0.565"
+        app:layout_constraintHorizontal_bias="0.591"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernameEditText"
-        app:layout_constraintVertical_bias="0.418" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.528" />
 
     <Button
         android:id="@+id/button2"
@@ -69,7 +95,7 @@
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernameEditText"
-        app:layout_constraintVertical_bias="0.418" /> <!-- Adjust the position as needed -->
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.528" /> <!-- Adjust the position as needed -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
