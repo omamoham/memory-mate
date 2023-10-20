@@ -3,6 +3,7 @@ package com.example.memory_mate;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -187,8 +188,18 @@ public class MainActivity extends AppCompatActivity {
             button2EditText.setVisibility(View.GONE);
         }
 
+        button1button.setOnClickListener( new View.OnClickListener() {
+            @Override
+             public void onClick(View v) {
+                 openlocation1();
+             }
+        });
 
+    }
 
+    public void openlocation1(){
+        Intent intent=new Intent(this, Location1.class);
+    startActivity(intent);
     }
 
 }
