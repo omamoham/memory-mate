@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -22,6 +23,25 @@ public class RoomActivity extends AppCompatActivity {
         long roomId = intent.getLongExtra("roomId",-1); // -1 is a default value in case the extra is not found
 
         new FetchRoomNameTask(roomId,RoomName).execute();
+
+        AddItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Get the room ID for Room 1
+                Intent intent1 = getIntent();
+                long roomId = intent1.getLongExtra("roomId",-1); // -1 is a default value in case the extra is not found
+
+                // Create an intent to start the RoomActivity
+                Intent intent = new Intent(RoomActivity.this, AddItemActivity.class);
+
+                // Pass the room ID as an extra to the intent
+                intent.putExtra("roomId", roomId);
+
+                // Start the RoomActivity
+                startActivity(intent);
+            }
+        });
+
 
 
 
