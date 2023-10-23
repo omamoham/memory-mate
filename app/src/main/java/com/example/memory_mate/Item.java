@@ -17,8 +17,7 @@ public class Item {
     private long roomId;  // This represents the foreign key reference to the Room entity.
 
 
-    public Item(long id, String name, String description, byte[] image, long roomId) {
-        this.id = id;
+    public Item(String name, String description, byte[] image, long roomId) {
         this.name = name;
         this.description = description;
         this.image = image;
@@ -43,5 +42,25 @@ public class Item {
 
     public byte[] getImage() {
         return image;
+    }
+
+    public void setId(long id) {
+        this.id=id;
+    }
+
+    public void setRoomId(long roomId) {
+        this.roomId=roomId;
+    }
+
+    public void setName(String name) {
+        this.name=name;
+    }
+
+    public void setDescription(String description) {
+        this.description=description;
+    }
+
+    public void setImage(byte[] image) {
+        this.image=image;
     }
 }
