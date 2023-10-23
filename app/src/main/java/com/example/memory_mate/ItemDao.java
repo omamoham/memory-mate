@@ -10,4 +10,5 @@ public interface ItemDao {
     @Query("SELECT * FROM items WHERE room_id = :roomId")
     List<Item> getItemsForRoom(long roomId);
     // Other CRUD operations...
+
 }

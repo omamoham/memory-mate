@@ -96,6 +96,22 @@ public class Location1 extends AppCompatActivity {
         new GetRoomNameTask(room5, buttonRoom5).execute();
 
         //buttonRoom1.setText(Room1string);
+        buttonRoom1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Get the room ID for Room 1
+                long roomId = 1;
+
+                // Create an intent to start the RoomActivity
+                Intent intent = new Intent(Location1.this, RoomActivity.class);
+
+                // Pass the room ID as an extra to the intent
+                intent.putExtra("roomId", roomId);
+
+                // Start the RoomActivity
+                startActivity(intent);
+            }
+        });
 
 
 
