@@ -10,6 +10,7 @@
         android:id="@+id/itemName"
         android:layout_width="match_parent"
         android:layout_height="62dp"
+        android:background="#CE00BCD4"
         android:text="Item Name Placeholder"
         android:textAlignment="center"
         android:textSize="24sp" />

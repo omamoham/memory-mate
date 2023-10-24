@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DC618A"
     tools:context=".RoomActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="407dp"
         android:layout_height="457dp"
+        android:background="#5DCC6F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,6 +34,7 @@
         android:id="@+id/textView"
         android:layout_width="355dp"
         android:layout_height="68dp"
+        android:background="#C4CD64"
         android:text="Room Name"
         android:textAlignment="center"
         android:textSize="24sp"

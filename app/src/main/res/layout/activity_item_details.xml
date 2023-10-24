@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#B6E4EA"
     tools:context=".ItemDetailsActivity">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="400dp"
         android:layout_height="60dp"
+        android:background="#D67979"
         android:text="ID"
         android:textAlignment="center"
         android:textSize="34sp"
@@ -17,11 +19,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="402dp"
         android:layout_height="73dp"
         android:layout_marginTop="16dp"
+        android:background="#E6DD8C"
         android:text="Name"
         android:textAlignment="center"
         android:textSize="34sp"
@@ -35,6 +39,7 @@
         android:layout_width="394dp"
         android:layout_height="141dp"
         android:layout_marginTop="12dp"
+        android:background="#B4DA88"
         android:text="Description"
         android:textAlignment="center"
         android:textSize="24sp"
