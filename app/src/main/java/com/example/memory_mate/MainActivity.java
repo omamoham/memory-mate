@@ -195,11 +195,23 @@ public class MainActivity extends AppCompatActivity {
              }
         });
 
+        button2button.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openlocation2();
+            }
+        });
+
     }
 
     public void openlocation1(){
         Intent intent=new Intent(this, Location1.class);
     startActivity(intent);
+    }
+
+    public void openlocation2(){
+        Intent intent=new Intent(this, Location2.class);
+        startActivity(intent);
     }
 
 }

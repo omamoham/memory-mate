@@ -26,7 +26,7 @@ public class RoomActivity extends AppCompatActivity {
 
         TextView RoomName= findViewById(R.id.textView);
         Button AddItem=findViewById(R.id.button7);
-        Button gotorooms=findViewById(R.id.button13);
+        Button gotohome=findViewById(R.id.button13);
 
         Intent intent = getIntent();
         long roomId = intent.getLongExtra("roomId",-1); // -1 is a default value in case the extra is not found
@@ -70,11 +70,11 @@ public class RoomActivity extends AppCompatActivity {
         });
         recyclerView.setAdapter(itemAdapter);
 
-        gotorooms.setOnClickListener(new View.OnClickListener() {
+        gotohome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Create an intent to start the RoomActivity
-                Intent intent = new Intent(RoomActivity.this, Location1.class);
+                Intent intent = new Intent(RoomActivity.this, MainActivity.class);
                 // Start the RoomActivity
                 startActivity(intent);
             }
@@ -114,8 +114,9 @@ public class RoomActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String roomName) {
-            // Display the room name in the TextView
-            roomNameTextView.setText(roomName);
+            // Display the room name in the TextView with the "RoomName: " prefix
+            String roomNameWithPrefix = "RoomName: " + roomName;
+            roomNameTextView.setText(roomNameWithPrefix);
         }
     }
 

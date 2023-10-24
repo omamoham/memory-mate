@@ -80,9 +80,9 @@ public class ItemDetailsActivity extends AppCompatActivity {
             TextView itemDescriptionTextView = findViewById(R.id.textView4);
             ImageView imageforitem=findViewById(R.id.imageView2);
 
-            itemfromroomid.setText(String.valueOf(item.getId()));
-            itemNameTextView.setText(item.getName());
-            itemDescriptionTextView.setText(item.getDescription());
+            itemfromroomid.setText("id: " + String.valueOf(item.getId()));
+            itemNameTextView.setText("Name: " + item.getName());
+            itemDescriptionTextView.setText("Description: " + item.getDescription());
             // Check if item has an image and set it to the ImageView
             if (item.getImage() != null) {
                 byte[] imageData = item.getImage();

@@ -11,29 +11,29 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class Location1 extends AppCompatActivity {
+public class Location2 extends AppCompatActivity {
     String Room1string;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_location1);
+        setContentView(R.layout.activity_location2);
 
 
-        Button buttonRoom1 = findViewById(R.id.button);
-        Button buttonRoom2 = findViewById(R.id.button3);
-        Button buttonRoom3 = findViewById(R.id.button4);
-        Button buttonRoom4 = findViewById(R.id.button5);
-        Button buttonRoom5 = findViewById(R.id.button6);
-        Button Homepage = findViewById(R.id.button11);
+        Button buttonRoom1 = findViewById(R.id.button0);
+        Button buttonRoom2 = findViewById(R.id.button33);
+        Button buttonRoom3 = findViewById(R.id.button44);
+        Button buttonRoom4 = findViewById(R.id.button55);
+        Button buttonRoom5 = findViewById(R.id.button66);
+        Button Homepage = findViewById(R.id.button111);
 
         // Create a Room object
-        Room room1 = new Room(1, "Room1");
-        Room room2 = new Room(2, "Room2");
-        Room room3 = new Room(3, "Room3");
-        Room room4 = new Room(4, "Room4");
-        Room room5 = new Room(5, "Room5");
+        Room room1 = new Room(6, "Room1");
+        Room room2 = new Room(7, "Room2");
+        Room room3 = new Room(8, "Room3");
+        Room room4 = new Room(9, "Room4");
+        Room room5 = new Room(10, "Room5");
 
         new CheckRoomExistsTask(room1).execute();
         new CheckRoomExistsTask(room2).execute();
@@ -101,10 +101,10 @@ public class Location1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Get the room ID for Room 1
-                long roomId = 1;
+                long roomId = 6;
 
                 // Create an intent to start the RoomActivity
-                Intent intent = new Intent(Location1.this, RoomActivity.class);
+                Intent intent = new Intent(Location2.this, RoomActivity.class);
 
                 // Pass the room ID as an extra to the intent
                 intent.putExtra("roomId", roomId);
@@ -118,10 +118,10 @@ public class Location1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Get the room ID for Room 1
-                long roomId = 2;
+                long roomId = 7;
 
                 // Create an intent to start the RoomActivity
-                Intent intent = new Intent(Location1.this, RoomActivity.class);
+                Intent intent = new Intent(Location2.this, RoomActivity.class);
 
                 // Pass the room ID as an extra to the intent
                 intent.putExtra("roomId", roomId);
@@ -135,10 +135,10 @@ public class Location1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Get the room ID for Room 1
-                long roomId = 3;
+                long roomId = 8;
 
                 // Create an intent to start the RoomActivity
-                Intent intent = new Intent(Location1.this, RoomActivity.class);
+                Intent intent = new Intent(Location2.this, RoomActivity.class);
 
                 // Pass the room ID as an extra to the intent
                 intent.putExtra("roomId", roomId);
@@ -152,10 +152,10 @@ public class Location1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Get the room ID for Room 1
-                long roomId = 4;
+                long roomId = 9;
 
                 // Create an intent to start the RoomActivity
-                Intent intent = new Intent(Location1.this, RoomActivity.class);
+                Intent intent = new Intent(Location2.this, RoomActivity.class);
 
                 // Pass the room ID as an extra to the intent
                 intent.putExtra("roomId", roomId);
@@ -169,10 +169,10 @@ public class Location1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Get the room ID for Room 1
-                long roomId = 5;
+                long roomId = 10;
 
                 // Create an intent to start the RoomActivity
-                Intent intent = new Intent(Location1.this, RoomActivity.class);
+                Intent intent = new Intent(Location2.this, RoomActivity.class);
 
                 // Pass the room ID as an extra to the intent
                 intent.putExtra("roomId", roomId);
@@ -188,7 +188,7 @@ public class Location1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Create an intent to start the RoomActivity
-                Intent intent = new Intent(Location1.this, MainActivity.class);
+                Intent intent = new Intent(Location2.this, MainActivity.class);
                 // Start the RoomActivity
                 startActivity(intent);
             }

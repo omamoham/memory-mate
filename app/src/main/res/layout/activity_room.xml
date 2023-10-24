@@ -30,8 +30,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="154dp"
-        android:layout_height="41dp"
+        android:layout_width="355dp"
+        android:layout_height="68dp"
         android:text="Room Name"
         android:textAlignment="center"
         android:textSize="24sp"
@@ -44,7 +44,7 @@
         android:id="@+id/button13"
         android:layout_width="114dp"
         android:layout_height="57dp"
-        android:text="Go back to Rooms"
+        android:text="Go back Home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button7"
         app:layout_constraintHorizontal_bias="0.239"
