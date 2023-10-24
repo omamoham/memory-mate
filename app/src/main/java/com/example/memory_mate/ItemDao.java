@@ -13,6 +13,9 @@ public interface ItemDao {
 
     @Insert
     long insert(Item item);
+
+    @Query("SELECT * FROM items WHERE id = :itemId")
+    Item getItemById(long itemId);
     // Other CRUD operations...
 
 }

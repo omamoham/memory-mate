@@ -1,15 +1,23 @@
 package com.example.memory_mate;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.List;
+
 public class RoomActivity extends AppCompatActivity {
+
+    //private RecyclerView recyclerView=findViewById(R.id.recyclerView);
+    private ItemAdapter itemAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,11 +26,16 @@ public class RoomActivity extends AppCompatActivity {
 
         TextView RoomName= findViewById(R.id.textView);
         Button AddItem=findViewById(R.id.button7);
+        Button gotorooms=findViewById(R.id.button13);
 
         Intent intent = getIntent();
         long roomId = intent.getLongExtra("roomId",-1); // -1 is a default value in case the extra is not found
 
         new FetchRoomNameTask(roomId,RoomName).execute();
+
+        // Create an instance of FetchRoomItemsTask and execute it
+        FetchRoomItemsTask fetchRoomItemsTask = new FetchRoomItemsTask();
+        fetchRoomItemsTask.execute(roomId);
 
         AddItem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +54,32 @@ public class RoomActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        itemAdapter = new ItemAdapter(new ItemAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Item item) {
+                Intent intent2 = getIntent();
+                long roomId = intent2.getLongExtra("roomId",-1);
+                Intent intent = new Intent(RoomActivity.this, ItemDetailsActivity.class);
+                intent.putExtra("item_id", item.getId());
+                intent.putExtra("roomId", roomId);
+                startActivity(intent);
+            }
+        });
+        recyclerView.setAdapter(itemAdapter);
+
+        gotorooms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Create an intent to start the RoomActivity
+                Intent intent = new Intent(RoomActivity.this, Location1.class);
+                // Start the RoomActivity
+                startActivity(intent);
+            }
+        });
+
 
 
 
@@ -79,5 +118,26 @@ public class RoomActivity extends AppCompatActivity {
             roomNameTextView.setText(roomName);
         }
     }
+
+    private class FetchRoomItemsTask extends AsyncTask<Long, Void, List<Item>> {
+        @Override
+        protected List<Item> doInBackground(Long... params) {
+            if (params.length > 0) {
+                long roomId = params[0];
+                return ((MyApplication) getApplication()).getDatabase().itemDao().getItemsForRoom(roomId);
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(List<Item> items) {
+            if (items != null) {
+                itemAdapter.setItems(items);
+                //for (Item item : items) {
+                   // Log.d("ItemAdapter", "Item Name: " + item.getName());
+                }
+            }
+        }
+
 
 }

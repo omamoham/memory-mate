@@ -26,6 +26,7 @@ public class Location1 extends AppCompatActivity {
         Button buttonRoom3 = findViewById(R.id.button4);
         Button buttonRoom4 = findViewById(R.id.button5);
         Button buttonRoom5 = findViewById(R.id.button6);
+        Button Homepage = findViewById(R.id.button11);
 
         // Create a Room object
         Room room1 = new Room(1, "Room1");
@@ -108,6 +109,18 @@ public class Location1 extends AppCompatActivity {
                 // Pass the room ID as an extra to the intent
                 intent.putExtra("roomId", roomId);
 
+                // Start the RoomActivity
+                startActivity(intent);
+            }
+        });
+
+
+
+        Homepage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Create an intent to start the RoomActivity
+                Intent intent = new Intent(Location1.this, MainActivity.class);
                 // Start the RoomActivity
                 startActivity(intent);
             }
